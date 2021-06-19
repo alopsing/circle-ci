@@ -8,7 +8,7 @@ jobs:
       - deploy:
           name: Push application Docker image
           command: |
-            if [ "$ {CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker build -t ansible-ci:2.7.6 .
               docker login -u alopsing -p ${docker_hub_password}
               docker push alopsing/ansible-ci:2.7.6
