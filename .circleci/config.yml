@@ -5,6 +5,7 @@ jobs:
       - image: circleci/buildpack-deps:stretch
     steps:
       - checkout
+      - setup_remote_docker
       - deploy:
           name: Push application Docker image
           command: |
